@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mak Sri Kitchen — Link Bio & Pemesanan Online</title>
+  <meta name="description" content="Semua link resmi Mak Sri Kitchen: Order WhatsApp, ShopeeFood, GoFood, GrabFood, Katalog Menu, Lokasi Google Maps & Instagram.">
+  <meta name="theme-color" content="#F07810">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mak Sri Kitchen — Link Bio Resmi">
+  <meta property="og:description" content="Order Ayam Popcorn Mak Sri Kitchen via WhatsApp, ShopeeFood, GoFood, GrabFood & Info Lokasi.">
+  <meta property="og:image" content="../assets/images/hero-chicken.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-maksri.png">
+  <link rel="apple-touch-icon" href="assets/images/logo-maksri.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #F07810;
+      --primary-dark: #D46104;
+      --accent-red: #E03131;
+      --accent-green: #25D366;
+      --gofood-red: #EE2737;
+      --grab-green: #00B14F;
+      --shopee-orange: #EE4D2D;
+      --ink: #25221F;
+      --card: #FFFFFF;
+      --shadow: 0 8px 24px rgba(74, 40, 12, 0.16);
+      --shadow-hover: 0 12px 30px rgba(43, 37, 32, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(160deg, #F07810 0%, #D8560F 45%, #9C2727 100%);
+      min-height: 100vh;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      padding: 36px 18px 52px;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
+
+    /* Avatar */
+    .avatar-wrapper {
+      position: relative;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      margin: 0 auto 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      padding: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar-wrapper:hover {
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .name {
+      font-family: 'Fredoka', cursive, sans-serif;
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .tagline {
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 15px;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .sub-slogan {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Section Label */
+    .section-label {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-align: left;
+      margin: 28px 4px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Buttons */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: var(--card);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 16px 20px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn .ic {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+
+    .btn .ic svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .btn .txt {
+      flex: 1;
+      text-align: left;
+      line-height: 1.3;
+    }
+
+    .btn .title {
+      display: block;
+      font-size: 15.5px;
+      color: var(--ink);
+    }
+
+    .btn .sub {
+      display: block;
+      font-weight: 600;
+      font-size: 12px;
+      color: #79716B;
+      margin-top: 2px;
+    }
+
+    .btn .badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+
+    .btn .arrow {
+      color: #C7C2BE;
+      font-size: 20px;
+      font-weight: 800;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(3px);
+      color: var(--primary);
+    }
+
+    /* Button Variations */
+    .btn-wa {
+      border-left: 5px solid var(--accent-green);
+    }
+    .btn-wa .ic {
+      color: var(--accent-green);
+    }
+
+    .btn-shopee {
+      border-left: 5px solid var(--shopee-orange);
+    }
+    .btn-shopee .ic {
+      color: var(--shopee-orange);
+    }
+
+    .btn-gofood {
+      border-left: 5px solid var(--gofood-red);
+    }
+    .btn-gofood .ic {
+      color: var(--gofood-red);
+    }
+
+    .btn-grab {
+      border-left: 5px solid var(--grab-green);
+    }
+    .btn-grab .ic {
+      color: var(--grab-green);
+    }
+
+    .btn-web {
+      border-left: 5px solid var(--primary);
+    }
+    .btn-web .ic {
+      color: var(--primary);
+    }
+
+    .btn-maps {
+      border-left: 5px solid #EA4335;
+    }
+    .btn-maps .ic {
+      color: #EA4335;
+    }
+
+    .btn-ig {
+      border-left: 5px solid #E1306C;
+    }
+    .btn-ig .ic {
+      color: #E1306C;
+    }
+
+    .btn-review {
+      border-left: 5px solid #FBBC05;
+    }
+    .btn-review .ic {
+      color: #FBBC05;
+    }
+
+    /* Highlight Banner Button */
+    .btn-highlight {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFF5EC 100%);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 36px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: #FFFFFF;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap">
+
+    <!-- Avatar / Logo -->
+    <div class="avatar-wrapper">
+      <img src="assets/images/logo-maksri.png" alt="Logo Mak Sri Kitchen">
+    </div>
+
+    <!-- Title & Tagline -->
+    <h1 class="name">Mak Sri Kitchen</h1>
+    <p class="tagline">Spesialis Ayam Popcorn Crispy &amp; Juicy 🍗</p>
+    <span class="sub-slogan">📍 Umbulharjo, Yogyakarta • Masakan Ibu Sejati</span>
+
+    <!-- ============ ORDER DELIVERY ONLINE ============ -->
+    <div class="section-label">Pesan Makanan Online</div>
+    <div class="links">
+
+      <!-- WhatsApp Direct -->
+      <a class="btn btn-wa btn-highlight" href="https://wa.me/62895703265466?text=Halo%20Mak%20Sri%20Kitchen!%20Saya%20mau%20order%20Ayam%20Popcorn%20langsung%20nih" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">WhatsApp Order Langsung</span>
+          <span class="sub">Chat admin 0895-7032-65466 (Fast Respon)</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <!-- ShopeeFood -->
+      <a class="btn btn-shopee" href="https://shopee.co.id/universal-link/now-food/shop/21639088?deep_and_deferred=1" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.5 7.5h-2.2c-.3-2.5-2.2-4.5-4.8-4.5s-4.5 2-4.8 4.5H5.5c-1.1 0-2 .9-2 2l1.5 10c.1.9.9 1.5 1.8 1.5h12.4c.9 0 1.7-.6 1.8-1.5l1.5-10c0-1.1-.9-2-2-2zm-7-2.5c1.4 0 2.5 1.1 2.8 2.5H9.7c.3-1.4 1.4-2.5 2.8-2.5zm6.4 14H6.1L4.8 9.5h14.4l-1.3 9.5z"/>
+            <path d="M12 11.5c-1.7 0-3 1.1-3 2.5s1.3 2.5 3 2.5 3-1.1 3-2.5-1.3-2.5-3-2.5z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">ShopeeFood — Mak Sri Kitchen</span>
+          <span class="sub">Banyak promo &amp; voucher gratis ongkir</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <!-- GoFood -->
+      <a class="btn btn-gofood" href="https://gofood.link" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="12" cy="12" r="4"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">GoFood — Mak Sri Kitchen</span>
+          <span class="sub">Pesan instan via Gojek Indonesia</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <!-- GrabFood -->
+      <a class="btn btn-grab" href="https://food.grab.com" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">GrabFood — Mak Sri Kitchen</span>
+          <span class="sub">Antar cepat hangat sampai di rumah</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+    </div>
+
+    <!-- ============ WEBSITE & INFORMASI ============ -->
+    <div class="section-label">Website &amp; Info Warung</div>
+    <div class="links">
+
+      <!-- Website Utama -->
+      <a class="btn btn-web" href="/" target="_self">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Website Resmi &amp; Katalog Menu</span>
+          <span class="sub">Lihat foto varian, harga &amp; cerita dapur</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <!-- Google Maps Lokasi -->
+      <a class="btn btn-maps" href="https://www.google.com/maps/place/Mak+Sri+Kitchen/@-7.8074317,110.3917577,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a57e0a995bb3b:0x508a72bef1b55946!8m2!3d-7.807437!4d110.3943326!16s%2Fg%2F11nw80yppn?entry=ttu" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Petunjuk Arah Google Maps</span>
+          <span class="sub">Jl. Veteran, Umbulharjo, Yogyakarta</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+    </div>
+
+    <!-- ============ SOSIAL MEDIA & ULASAN ============ -->
+    <div class="section-label">Media Sosial &amp; Ulasan</div>
+    <div class="links">
+
+      <!-- Instagram -->
+      <a class="btn btn-ig" href="https://www.instagram.com/maksrikitchen" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Instagram</span>
+          <span class="sub">@maksrikitchen</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+      <!-- Google Review -->
+      <a class="btn btn-review" href="https://www.google.com/maps/place/Mak+Sri+Kitchen/@-7.8074317,110.3917577,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a57e0a995bb3b:0x508a72bef1b55946!8m2!3d-7.807437!4d110.3943326!16s%2Fg%2F11nw80yppn?entry=ttu" target="_blank" rel="noopener">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+          </svg>
+        </span>
+        <span class="txt">
+          <span class="title">Beri Ulasan Bintang 5 ⭐</span>
+          <span class="sub">Bantu Mak Sri Kitchen di Google Maps</span>
+        </span>
+        <span class="arrow">›</span>
+      </a>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      🍗 Masakan Ibu Sejati • Digoreng Mendadak Selalu Renyah<br>
+      © 2026 <a href="/">Mak Sri Kitchen</a> Yogyakarta
+    </footer>
+
+  </main>
+
+</body>
+</html>
