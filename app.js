@@ -40,16 +40,39 @@ function initNavbar() {
   }
 }
 
+function getActiveMenuItems() {
+  try {
+    const saved = localStorage.getItem('mak_sri_menu_items');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+  } catch (e) {
+    console.warn('Gagal membaca custom menu dari localStorage:', e);
+  }
+  return typeof MENU_ITEMS !== 'undefined' ? MENU_ITEMS : [];
+}
+
 // 2. Menu Rendering & Filtering
 function initMenu() {
   const menuContainer = document.getElementById('menu-grid');
   const filterButtons = document.querySelectorAll('.filter-btn');
   const searchInput = document.getElementById('menu-search');
 
+  function updateMenuCount() {
+    const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+    if (allBtn) {
+      allBtn.textContent = `Semua Menu (${getActiveMenuItems().length})`;
+    }
+  }
+  updateMenuCount();
+
   function render() {
     if (!menuContainer) return;
 
-    let items = MENU_ITEMS;
+    let items = getActiveMenuItems();
 
     // Filter by category
     if (activeCategory !== 'all') {
