@@ -1,0 +1,16 @@
+{
+  "name": "Mak Sri Kitchen Yogyakarta",
+  "short_name": "Mak Sri",
+  "description": "Warung Spesial Olahan Ayam & Chinese Food Halal Mak Sri Kitchen Umbulharjo Yogyakarta",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF5",
+  "theme_color": "#F07810",
+  "icons": [
+    {
+      "src": "assets/images/logo-maksri.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ]
+}

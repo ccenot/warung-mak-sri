@@ -91,7 +91,6 @@ function initMenu() {
               <span class="price-currency">Harga</span>
               <span class="price-amount">Rp ${item.price.toLocaleString('id-ID')}</span>
             </div>
-            <span class="card-portion-tag">✨ Porsi Puas</span>
           </div>
         </div>
       </div>

@@ -568,16 +568,24 @@ button {
 }
 
 .trust-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
   background: var(--cream-surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  color: var(--primary);
   flex-shrink: 0;
   border: 1px solid var(--cream-border);
+  transition: all var(--transition-fast);
+}
+
+.trust-item:hover .trust-icon-box {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .trust-text h4 {
@@ -938,9 +946,27 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
   margin: 0 auto 22px;
   border: 2px solid rgba(240, 120, 16, 0.15);
+  transition: all var(--transition-fast);
+}
+
+.feature-icon-wrapper svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--primary-dark);
+  transition: transform var(--transition-fast);
+}
+
+.feature-box:hover .feature-icon-wrapper {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.feature-box:hover .feature-icon-wrapper svg {
+  stroke: var(--white);
+  transform: scale(1.1);
 }
 
 .feature-box h3 {
@@ -1093,8 +1119,8 @@ button {
 }
 
 .reviewer-avatar {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--cream-surface);
   border: 1px solid var(--cream-border);
@@ -1102,6 +1128,14 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.reviewer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .reviewer-info h4 {
