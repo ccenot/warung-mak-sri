@@ -1032,6 +1032,7 @@
 
           <select id="admin-category-filter" class="filter-select">
             <option value="all">Semua Kategori</option>
+            <option value="paket-nasi">Paket Nasi Ayam</option>
             <option value="saus">Lauk Ayam Saus</option>
             <option value="goreng">Ayam Goreng Spesial</option>
             <option value="kulit">Kulit Ayam Crispy</option>
@@ -1101,6 +1102,7 @@
             <div class="form-group">
               <label for="form-category">Kategori *</label>
               <select id="form-category" class="form-select" required>
+                <option value="paket-nasi">Paket Nasi Ayam (paket-nasi)</option>
                 <option value="saus">Lauk Ayam Saus (saus)</option>
                 <option value="goreng">Ayam Goreng Spesial (goreng)</option>
                 <option value="kulit">Kulit Ayam Crispy (kulit)</option>
@@ -1127,6 +1129,7 @@
                 <option value="tag-pedas">Oranye (Pedas)</option>
                 <option value="tag-gurih">Kuning / Emas (Gurih / Keju)</option>
                 <option value="tag-hemat">Hijau (Segar / Hemat)</option>
+                <option value="tag-habis">Abu-abu (Habis / Sold Out)</option>
               </select>
             </div>
           </div>
@@ -1336,14 +1339,22 @@
       // ==========================================
       // DATA MANAGEMENT (MENU & HARGA)
       // ==========================================
+      const MENU_DATA_VERSION = '2026-10-01-v2';
+
       function loadMenuItems() {
         try {
-          const saved = localStorage.getItem(DATA_KEY);
-          if (saved) {
-            const parsed = JSON.parse(saved);
-            if (Array.isArray(parsed) && parsed.length > 0) {
-              menuList = parsed;
-              return;
+          const currentVer = localStorage.getItem('mak_sri_menu_ver');
+          if (currentVer !== MENU_DATA_VERSION) {
+            localStorage.removeItem(DATA_KEY);
+            localStorage.setItem('mak_sri_menu_ver', MENU_DATA_VERSION);
+          } else {
+            const saved = localStorage.getItem(DATA_KEY);
+            if (saved) {
+              const parsed = JSON.parse(saved);
+              if (Array.isArray(parsed) && parsed.length > 0) {
+                menuList = parsed;
+                return;
+              }
             }
           }
         } catch (e) {

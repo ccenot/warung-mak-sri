@@ -776,6 +776,15 @@ button {
 .tag-pedas { background: linear-gradient(135deg, #E03131 0%, #C92A2A 100%); }
 .tag-gurih { background: linear-gradient(135deg, #F08C00 0%, #E67700 100%); }
 .tag-hemat { background: linear-gradient(135deg, #12B886 0%, #099268 100%); }
+.tag-habis { background: linear-gradient(135deg, #868E96 0%, #495057 100%); }
+
+.menu-card.is-sold-out {
+  opacity: 0.68;
+}
+
+.menu-card.is-sold-out .card-media img {
+  filter: grayscale(80%);
+}
 
 .card-spice-level {
   position: absolute;

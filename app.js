@@ -40,13 +40,21 @@ function initNavbar() {
   }
 }
 
+const MENU_DATA_VERSION = '2026-10-01-v2';
+
 function getActiveMenuItems() {
   try {
-    const saved = localStorage.getItem('mak_sri_menu_items');
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed;
+    const currentVer = localStorage.getItem('mak_sri_menu_ver');
+    if (currentVer !== MENU_DATA_VERSION) {
+      localStorage.removeItem('mak_sri_menu_items');
+      localStorage.setItem('mak_sri_menu_ver', MENU_DATA_VERSION);
+    } else {
+      const saved = localStorage.getItem('mak_sri_menu_items');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
       }
     }
   } catch (e) {
@@ -100,10 +108,10 @@ function initMenu() {
     }
 
     menuContainer.innerHTML = items.map(item => `
-      <div class="menu-card" data-id="${item.id}">
+      <div class="menu-card ${item.soldOut ? 'is-sold-out' : ''}" data-id="${item.id}">
         <div class="card-media">
           <img src="${item.image}" alt="${item.name}" loading="lazy">
-          <span class="card-tag ${item.tagClass}">${item.badge}</span>
+          <span class="card-tag ${item.soldOut ? 'tag-habis' : item.tagClass}">${item.soldOut ? 'Habis' : item.badge}</span>
           <span class="card-spice-level">${item.spiceLevel}</span>
         </div>
         <div class="card-content">
@@ -111,9 +119,10 @@ function initMenu() {
           <p class="card-desc">${item.desc}</p>
           <div class="card-footer">
             <div class="card-price">
-              <span class="price-currency">Harga</span>
-              <span class="price-amount">Rp ${item.price.toLocaleString('id-ID')}</span>
+              <span class="price-currency">${item.soldOut ? 'Ketersediaan' : 'Harga'}</span>
+              <span class="price-amount" style="${item.soldOut ? 'color: #c92a2a;' : ''}">${item.soldOut ? 'Habis' : 'Rp ' + item.price.toLocaleString('id-ID')}</span>
             </div>
+            ${item.portionTag ? `<span class="card-portion-tag">${item.portionTag}</span>` : ''}
           </div>
         </div>
       </div>
